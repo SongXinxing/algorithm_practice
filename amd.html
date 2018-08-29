@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="demo">asdfdfsfas</div>
+	<script type="text/javascript" src="./amd.js"></script>
+	<script type="text/javascript">
+		debugger;
+		F.module(['lib/event'], function (events) {
+			events.on('demo', 'click', function () {
+				// dom.html('demo', 'success');
+				console.log(1111)
+			})
+		})
+	</script>
+</body>
+</html>

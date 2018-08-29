@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.template {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="./amd.js"></script>
+</head>
+<body>
+	<div id="demo_tag" class="template">
+		<div id="tag_cloud">
+			{% for (var i = 0, len = tagCloud.length; i < len; i++) {
+				var ctx = tagCloud[i]; %}
+				<a href="#" class="tag_item
+				{% if (ctx['is_selected']) { %}
+					selected
+				{% } %}
+				" title ="{%= ctx['title'] %}">{%=ctx["text"]%}</a>
+			{% } %}
+		</div>
+	</div>
+	<div id="test"></div>
+	<!-- <div id="tag">
+		{% for (var i = 0, len = tagCloud.length; i < len; i++) {
+			var ctx = tagCloud[i]; %}
+			<a href="#" class="tag_item
+			{%= if (ctx['is_selected']) { %}
+				selected
+			{% } %}
+			" title="{%= ctx["title"] %}">{%= ctx["text"] %}</a>
+		{% } %}
+	</div> -->
+	<script type="text/javascript" src="./widget.js"></script>
+	<script type="text/javascript">
+		var data = {
+			tagCloud: [
+				{is_selected: true, title: '这是一本设计模式书', text: '设计模式'},
+				{is_selected: false, title: '这是一本HTML书', text: 'HTML'},
+				{is_selected: null, title: '这是一本CSS书', text: 'CSS'},
+				{is_selected: '', title: '这是一本JAVASCRIPT书', text: 'JS'}
+			]
+		}
+		F.module(['widget', 'lib/dom'], function (template, dom) {
+			var str = template('demo_tag', data);
+			console.log(str)
+			dom.html('test', str);
+		})
+	</script>
+</body>
+</html>

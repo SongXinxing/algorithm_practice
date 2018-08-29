@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width">
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+		img {
+			margin-bottom: 20px;
+		}
+		div {
+			margin-top: 20px;
+		}
+		.fl {
+			float: left;
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+		}
+		.tra {
+			transform: translateX(-100px);
+			height: 100px;
+			border: 1px solid green;
+		}
+		.right {
+			display: inline-block;
+			width: 10px;
+			height: 100px;
+			border: 1px solid orange;
+		}
+	</style>
+</head>
+<body>
+	<img srcset="./480w.jpg 480w, ./800w.jpg 800w" sizes="(max-width: 799px) 200px, (min-width: 800px) 400px" src="./icon-log_active.svg">
+	<div>sadf</div>
+	<!-- <picture>
+		<source srcset="./480w.jpg" media="(max-width: 799px)" type="">
+		<source srcset="./800w.jpg" media="(min-width: 800px)" type="">
+		<img src="./800w.jpg">
+	</picture> -->
+	<div class="fl"></div>
+	<div class="fl"></div>
+	<div class="tra"></div>
+	<div class="right"></div>
+</body>
+</html>
