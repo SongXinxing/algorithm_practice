@@ -125,7 +125,6 @@ function mergeSort (arr) {
 
 
 
-
 function binarySearch (arr, item, first = 0) {
 	var n = arr.length
 	if (n <= 0) {return -1}
@@ -141,18 +140,52 @@ function binarySearch (arr, item, first = 0) {
 	}
 }
 
+
+
 function binarySearch (arr, item) { // 非递归
-	var first = 0
-	var last = arr.length - 1
-	var mid
-	do {
-		mid = Math.floor((first + last) / 2)
+	let first = 0
+	let last = arr.length - 1
+	let mid
+    while (first <= last) {
+		mid = Math.floor((first + (last - first) / 2)
 		if (arr[mid] === item) {return mid}
 		if (arr[mid] > item) {
 			last = mid - 1
 		} else {
 			first = mid + 1
 		}
-	} while (first <= last)
+	}
 	return -1
 }
+
+function pow (x, n) {
+	if (n < 0) {return 'error'}
+	if (n === 0) {return 1}
+	let t = pow(x, Math.floor(n /2))
+	if (n % 2) {
+		return x*t*t
+	} else {
+		return t*t
+	}
+}
+
+function pow (x, n) {
+	if (n < 0) {return 'error'}
+	let total = 1
+	for (let i = 0; i < n; i++) {
+		total *= x
+	}
+	return total
+}
+
+
+for (let i = 20; i < 26; i++) {
+    console.time('star')
+    let n = Math.pow(2, i)
+	// for (var j = 0; j < n; j++) {
+		pow(2,n)
+	// }
+	console.timeEnd('star')
+}
+
+
