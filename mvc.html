@@ -6,6 +6,14 @@
 	<script type="text/javascript" src="./library.js"></script>
 </head>
 <body>
+<input type="text" id="star">
+<script>
+	document.getElementById("star").addEventListener('input' ,(e) => {
+	    setTimeout(() => {
+	        console.log(e)
+		}, 0)
+	})
+</script>
 <script type="text/javascript" src="./mvc.js"></script>
 </body>
 </html>

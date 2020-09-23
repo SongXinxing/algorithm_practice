@@ -15,7 +15,6 @@ function bubbleSort (arr) {
 
 
 function bubbleSort (arr) {
-	debugger
 	for (var i = arr.length - 1; i > 0; i--) {
 		for (var j = 0; j < i; j++) {
 			if (arr[j] > arr[j+1]) {
@@ -26,7 +25,7 @@ function bubbleSort (arr) {
 }
 
 
-
+// 选择极值，放在一端，重复操作 （）选择排序
 function selectionSort(arr) {
     var min
     for (var i = 0; i < arr.length; i++) {
@@ -40,6 +39,10 @@ function selectionSort(arr) {
     }
 }
 
+
+
+/**********************************************************/
+// （）插入排序
 function insertSort (arr) {
 	for (var i = 1; i < arr.length; i++) {
 		for (var j = i; j > 0; j--) {
@@ -51,7 +54,7 @@ function insertSort (arr) {
 }
 
 
-
+// （） 希尔排序（进化版插入排序）
 function shellSort (arr) { // 希尔排序
 	var gap = Math.floor(arr.length / 2)
 	while (gap >0) {
@@ -72,7 +75,7 @@ function shellSort (arr) { // 希尔排序
 		gap = Math.floor(gap / 2)
 	}
 }
-
+/**********************************************************/
 
 
 function quickSort (arr, first = 0, last = arr.length - 1) {
@@ -147,7 +150,7 @@ function binarySearch (arr, item) { // 非递归
 	let last = arr.length - 1
 	let mid
     while (first <= last) {
-		mid = Math.floor((first + (last - first) / 2)
+		mid = Math.floor(first + (last - first) / 2)
 		if (arr[mid] === item) {return mid}
 		if (arr[mid] > item) {
 			last = mid - 1
