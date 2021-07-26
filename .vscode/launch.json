@@ -11,7 +11,8 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/leetcode/a.js"
+      // "program": "${workspaceFolder}/leetcode/parseHtml/parse.js"
+      "program": "${workspaceFolder}/leetcode/json_parse.js"
     }
   ]
 }
